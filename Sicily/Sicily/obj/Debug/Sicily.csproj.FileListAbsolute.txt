@@ -8,3 +8,14 @@ C:\Users\gamer\source\repos\Sicily\Sicily\obj\Debug\Sicily.csproj.GenerateResour
 C:\Users\gamer\source\repos\Sicily\Sicily\obj\Debug\Sicily.csproj.CoreCompileInputs.cache
 C:\Users\gamer\source\repos\Sicily\Sicily\obj\Debug\Sicily.exe
 C:\Users\gamer\source\repos\Sicily\Sicily\obj\Debug\Sicily.pdb
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.csproj.AssemblyReference.cache
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.Form1.resources
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.Properties.Resources.resources
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.csproj.GenerateResource.cache
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.csproj.CoreCompileInputs.cache
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.exe
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.pdb
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\bin\Debug\Sicily.exe.config
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\bin\Debug\Sicily.exe
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\bin\Debug\Sicily.pdb
+C:\Users\bapti\Source\Repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.csproj.CopyComplete
