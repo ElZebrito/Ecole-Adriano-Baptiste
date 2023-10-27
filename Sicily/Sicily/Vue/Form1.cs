@@ -77,5 +77,10 @@ namespace Sicily
         {
 
         }
+
+        private void Insertion_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -128,8 +128,8 @@ namespace Sicily.DAL
                     int ID_SECTEUR = (int)reader.GetValue(1);
                     int ID_PORT = (int)reader.GetValue(2);
                     int ID_PORT_ARRIVEE = (int)reader.GetValue(3);
-                    int DUREE_LIAISON = (int)reader.GetValue(4);
-
+                    //string DUREE_LIAISON = (string)reader.GetValue(4);
+                    TimeSpan DUREE_LIAISON = reader.GetTimeSpan(4);
 
                     //Instanciation d'un Secteur
                     l = new Liaison(ID_LIAISON, ID_SECTEUR, ID_PORT, ID_PORT_ARRIVEE, DUREE_LIAISON);

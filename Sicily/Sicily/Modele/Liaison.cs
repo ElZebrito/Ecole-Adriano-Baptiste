@@ -12,7 +12,8 @@ namespace Sicily.Modele
         private int ID_SECTEUR;
         private int ID_PORT;
         private int ID_PORT_ARRIVEE;
-        private int DUREE_LIAISON;
+        private string DUREE_LIAISON;
+        private TimeSpan dUREE_LIAISON;
 
 
 
@@ -24,18 +25,28 @@ namespace Sicily.Modele
         public int IdSecteur { get => ID_SECTEUR; }
         public int IdPortDepart { get => ID_PORT; }
         public int IdPortArrivee { get => ID_PORT_ARRIVEE; }
-        public int Duree { get => DUREE_LIAISON; }
+        public string Duree { get => DUREE_LIAISON; }
 
 
 
-        public Liaison(int unIdL, int unIdS, int unIdPort, int unIdPortArrivee, int UneDuree)
+        // public Liaison(int unIdL, int unIdS, int unIdPort, int unIdPortArrivee, string UneDuree)
+        // {
+        //    this.ID_LIAISON = unIdL;
+        //   this.ID_SECTEUR = unIdS;
+        //  this.ID_PORT = unIdPort;
+        // this.ID_PORT_ARRIVEE = unIdPortArrivee;
+        //this.DUREE_LIAISON = UneDuree;
+
+        //}
+
+        public Liaison(int iD_LIAISON, int iD_SECTEUR, int iD_PORT, int iD_PORT_ARRIVEE, TimeSpan dUREE_LIAISON)
         {
-            this.ID_LIAISON = unIdL;
-            this.ID_SECTEUR = unIdS;
-            this.ID_PORT = unIdPort;
-            this.ID_PORT_ARRIVEE = unIdPortArrivee;
-            this.DUREE_LIAISON = UneDuree;
-
+            ID_LIAISON = iD_LIAISON;
+            ID_SECTEUR = iD_SECTEUR;
+            ID_PORT = iD_PORT;
+            ID_PORT_ARRIVEE = iD_PORT_ARRIVEE;
+            this.dUREE_LIAISON = dUREE_LIAISON;
+            DUREE_LIAISON = dUREE_LIAISON.ToString();
         }
 
 

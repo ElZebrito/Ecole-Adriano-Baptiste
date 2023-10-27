@@ -55,9 +55,9 @@
             // listBoxSecteur
             // 
             this.listBoxSecteur.FormattingEnabled = true;
-            this.listBoxSecteur.Location = new System.Drawing.Point(268, 54);
+            this.listBoxSecteur.Location = new System.Drawing.Point(426, 48);
             this.listBoxSecteur.Name = "listBoxSecteur";
-            this.listBoxSecteur.Size = new System.Drawing.Size(236, 212);
+            this.listBoxSecteur.Size = new System.Drawing.Size(316, 394);
             this.listBoxSecteur.TabIndex = 0;
             this.listBoxSecteur.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             // 
@@ -66,7 +66,7 @@
             this.listBoxliaison.FormattingEnabled = true;
             this.listBoxliaison.Location = new System.Drawing.Point(12, 48);
             this.listBoxliaison.Name = "listBoxliaison";
-            this.listBoxliaison.Size = new System.Drawing.Size(236, 173);
+            this.listBoxliaison.Size = new System.Drawing.Size(398, 394);
             this.listBoxliaison.TabIndex = 1;
             // 
             // textBox1
@@ -90,12 +90,13 @@
             this.Insertion.Controls.Add(this.label1);
             this.Insertion.Controls.Add(this.button1);
             this.Insertion.Controls.Add(this.textBox1);
-            this.Insertion.Location = new System.Drawing.Point(517, 43);
+            this.Insertion.Location = new System.Drawing.Point(775, 57);
             this.Insertion.Name = "Insertion";
             this.Insertion.Size = new System.Drawing.Size(253, 375);
             this.Insertion.TabIndex = 5;
             this.Insertion.TabStop = false;
             this.Insertion.Text = "Insertion";
+            this.Insertion.Enter += new System.EventHandler(this.Insertion_Enter);
             // 
             // textBox5
             // 
@@ -183,7 +184,7 @@
             // Suppression
             // 
             this.Suppression.Controls.Add(this.Supprimer);
-            this.Suppression.Location = new System.Drawing.Point(259, 306);
+            this.Suppression.Location = new System.Drawing.Point(483, 506);
             this.Suppression.Name = "Suppression";
             this.Suppression.Size = new System.Drawing.Size(221, 112);
             this.Suppression.TabIndex = 6;
@@ -203,7 +204,7 @@
             // 
             this.groupBoxMAJ.Controls.Add(this.textBox6);
             this.groupBoxMAJ.Controls.Add(this.Modifier);
-            this.groupBoxMAJ.Location = new System.Drawing.Point(12, 253);
+            this.groupBoxMAJ.Location = new System.Drawing.Point(67, 462);
             this.groupBoxMAJ.Name = "groupBoxMAJ";
             this.groupBoxMAJ.Size = new System.Drawing.Size(241, 178);
             this.groupBoxMAJ.TabIndex = 7;
@@ -230,7 +231,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(804, 461);
+            this.ClientSize = new System.Drawing.Size(1264, 698);
             this.Controls.Add(this.groupBoxMAJ);
             this.Controls.Add(this.Suppression);
             this.Controls.Add(this.Insertion);
