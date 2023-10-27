@@ -17,6 +17,7 @@ namespace Sicily
         Mgr monManager;
 
         List<Secteur> lSec = new List<Secteur>();
+        List<Liaison> lLiai= new List<Liaison>();
         public Form1()
         {
             InitializeComponent();
@@ -26,12 +27,13 @@ namespace Sicily
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBoxliaison.Visible = false;
+            listBoxliaison.Visible = true;
             textBox1.Visible = true;
 
             lSec = monManager.chargementSicBD();
+            lLiai = monManager.chargementLiaiBD();
 
-        affiche();
+            affiche();
         }
 
         public void affiche()
@@ -45,7 +47,9 @@ namespace Sicily
 
                 listBoxSecteur.DataSource = null;
                 listBoxSecteur.DataSource = lSec;
-                listBoxSecteur.DisplayMember = "Description";
+                listBoxSecteur.DisplayMember = "DescriptionSecteur";
+                listBoxliaison.DataSource = lLiai;
+                listBoxliaison.DisplayMember = "DescriptionLiaison";
 
 
             }

@@ -37,7 +37,13 @@ namespace Sicily.Controleur
             return (maListeSecteur);
         }
 
+        public List<Liaison> chargementLiaiBD()
+        {
 
-       
+            maListeLiaison = SicilyDAO.getLiaisons();
+
+            return (maListeLiaison);
+        }
+
     }
 }

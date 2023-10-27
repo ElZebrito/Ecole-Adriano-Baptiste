@@ -17,6 +17,7 @@ namespace Sicily.Modele
 
         // remplace getId()
         public int Id { get => ID_SECTEUR; }
+        public string Libelle { get => LIBELLE_SCTEUR; }
 
 
         public Secteur(int unId, string unLibelle)
@@ -31,11 +32,11 @@ namespace Sicily.Modele
 
 
         // pour afficher la liste par la suite
-        public string Description
+        public string DescriptionSecteur
         {
             get => "Id : " + this.ID_SECTEUR + " Libelle :" + this.LIBELLE_SCTEUR ;
         }
-        public string Libelle { get => LIBELLE_SCTEUR; }
+        
         
     }
 }

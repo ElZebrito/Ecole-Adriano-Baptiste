@@ -6,7 +6,49 @@ using System.Threading.Tasks;
 
 namespace Sicily.Modele
 {
-    internal class Liaison
+    public class Liaison
     {
+        private int ID_LIAISON;
+        private int ID_SECTEUR;
+        private int ID_PORT;
+        private int ID_PORT_ARRIVEE;
+        private int DUREE_LIAISON;
+
+
+
+
+
+
+        // remplace getId()
+        public int IdLiaison { get => ID_LIAISON; }
+        public int IdSecteur { get => ID_SECTEUR; }
+        public int IdPortDepart { get => ID_PORT; }
+        public int IdPortArrivee { get => ID_PORT_ARRIVEE; }
+        public int Duree { get => DUREE_LIAISON; }
+
+
+
+        public Liaison(int unIdL, int unIdS, int unIdPort, int unIdPortArrivee, int UneDuree)
+        {
+            this.ID_LIAISON = unIdL;
+            this.ID_SECTEUR = unIdS;
+            this.ID_PORT = unIdPort;
+            this.ID_PORT_ARRIVEE = unIdPortArrivee;
+            this.DUREE_LIAISON = UneDuree;
+
+        }
+
+
+
+        // Constructeur vide
+
+
+        // pour afficher la liste par la suite
+        public string DescriptionLIAISON
+        {
+            get => "IdL : " + this.ID_LIAISON + " IdS :" + this.ID_SECTEUR + " IdPortDepart :" + this.ID_PORT + " IdPortArrivee :" + this.ID_PORT_ARRIVEE + " Duree :" + this.DUREE_LIAISON;
+        }
+
+
     }
 }
