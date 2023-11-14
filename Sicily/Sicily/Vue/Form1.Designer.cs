@@ -55,7 +55,7 @@
             // listBoxSecteur
             // 
             this.listBoxSecteur.FormattingEnabled = true;
-            this.listBoxSecteur.Location = new System.Drawing.Point(426, 48);
+            this.listBoxSecteur.Location = new System.Drawing.Point(37, 57);
             this.listBoxSecteur.Name = "listBoxSecteur";
             this.listBoxSecteur.Size = new System.Drawing.Size(316, 394);
             this.listBoxSecteur.TabIndex = 0;
@@ -64,10 +64,11 @@
             // listBoxliaison
             // 
             this.listBoxliaison.FormattingEnabled = true;
-            this.listBoxliaison.Location = new System.Drawing.Point(12, 48);
+            this.listBoxliaison.Location = new System.Drawing.Point(408, 57);
             this.listBoxliaison.Name = "listBoxliaison";
-            this.listBoxliaison.Size = new System.Drawing.Size(398, 394);
+            this.listBoxliaison.Size = new System.Drawing.Size(296, 394);
             this.listBoxliaison.TabIndex = 1;
+            this.listBoxliaison.SelectedIndexChanged += new System.EventHandler(this.listBoxliaison_SelectedIndexChanged);
             // 
             // textBox1
             // 

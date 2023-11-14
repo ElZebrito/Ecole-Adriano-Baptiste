@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sicily.Modele;
+using Sicily.DAL;
 
 namespace Sicily
 {
@@ -18,6 +19,7 @@ namespace Sicily
 
         List<Secteur> lSec = new List<Secteur>();
         List<Liaison> lLiai= new List<Liaison>();
+        List<Liaison> ListeLiaisonParSecteur ;
         public Form1()
         {
             InitializeComponent();
@@ -48,7 +50,12 @@ namespace Sicily
                 listBoxSecteur.DataSource = null;
                 listBoxSecteur.DataSource = lSec;
                 listBoxSecteur.DisplayMember = "DescriptionSecteur";
-                listBoxliaison.DataSource = lLiai;
+
+                Secteur secteur = listBoxSecteur.SelectedItem as Secteur;
+                ListeLiaisonParSecteur = SicilyDAO.TrouverLiaison(secteur, lLiai);
+
+
+                listBoxliaison.DataSource = ListeLiaisonParSecteur;
                 listBoxliaison.DisplayMember = "DescriptionLiaison";
 
 
@@ -63,9 +70,11 @@ namespace Sicily
 
         }
 
+        //ListBox Secteur
+
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            affiche();
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -79,6 +88,11 @@ namespace Sicily
         }
 
         private void Insertion_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void listBoxliaison_SelectedIndexChanged(object sender, EventArgs e)
         {
 
         }

@@ -26,7 +26,7 @@ namespace Sicily.Modele
         public int IdPortDepart { get => ID_PORT; }
         public int IdPortArrivee { get => ID_PORT_ARRIVEE; }
         public string Duree { get => DUREE_LIAISON; }
-
+        public Secteur Secteur { get => secteur; }
 
 
         // public Liaison(int unIdL, int unIdS, int unIdPort, int unIdPortArrivee, string UneDuree)
@@ -59,7 +59,6 @@ namespace Sicily.Modele
         {
             get => "IdL : " + this.ID_LIAISON + " IdS :" + this.ID_SECTEUR + " IdPortDepart :" + this.ID_PORT + " IdPortArrivee :" + this.ID_PORT_ARRIVEE + " Duree :" + this.DUREE_LIAISON;
         }
-
 
     }
 }

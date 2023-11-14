@@ -64,7 +64,7 @@ namespace Sicily.DAL
 
                     int ID_SECTEUR = (int)reader.GetValue(0);
                     string LIBELLE_SECTEUR = (string)reader.GetValue(1);
-                   
+
 
                     //Instanciation d'un Secteur
                     s = new Secteur(ID_SECTEUR, LIBELLE_SECTEUR);
@@ -162,9 +162,29 @@ namespace Sicily.DAL
 
         }
 
+        public static List<Liaison> TrouverLiaison(Secteur s, List<Liaison> ll)
+        {
+
+            List<Liaison> ListeLiaisonSecteur = new List<Liaison>();
+
+            foreach (Liaison liaison in ll)
+            {
+                if (liaison.Secteur == s)
+                {
+                    ListeLiaisonSecteur.Add(liaison);
+                }
+            }
+
+            return ListeLiaisonSecteur;
+
+        }
+
     }
 
 
 
 
 }
+
+
+// peut etre faire fonction find liason par secteur
