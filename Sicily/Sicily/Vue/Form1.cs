@@ -24,20 +24,21 @@ namespace Sicily
         {
             InitializeComponent();
 
+
             monManager= new Mgr();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBoxliaison.Visible = true;
+            listBoxliaison.Visible = false;
             textBox1.Visible = true;
 
             lSec = monManager.chargementSicBD();
             lLiai = monManager.chargementLiaiBD();
+            listBoxSecteur.ClearSelected();
 
             affiche();
         }
-
         public void affiche()
 
         {
@@ -47,17 +48,12 @@ namespace Sicily
             {
 
 
-                listBoxSecteur.DataSource = null;
+                
                 listBoxSecteur.DataSource = lSec;
                 listBoxSecteur.DisplayMember = "DescriptionSecteur";
-
-                Secteur secteur = listBoxSecteur.SelectedItem as Secteur;
-                ListeLiaisonParSecteur = SicilyDAO.TrouverLiaison(secteur, lLiai);
-
-
                 listBoxliaison.DataSource = ListeLiaisonParSecteur;
                 listBoxliaison.DisplayMember = "DescriptionLiaison";
-
+               
 
             }
 
@@ -74,6 +70,11 @@ namespace Sicily
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+            Secteur secteur = listBoxSecteur.SelectedItem as Secteur;
+
+            ListeLiaisonParSecteur = SicilyDAO.TrouverLiaison(secteur, lLiai);
+            listBoxliaison.Visible = true;
+
             affiche();
         }
 
@@ -95,6 +96,17 @@ namespace Sicily
         private void listBoxliaison_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void Supprimer_Click(object sender, EventArgs e)
+        {
+            Liaison liaison = listBoxliaison.SelectedItem as Liaison;
+            if (liaison != null)
+            {
+                lLiai.Remove(liaison);
+                monManager.SupLiaison(liaison);
+                affiche();
+            }
         }
     }
 }

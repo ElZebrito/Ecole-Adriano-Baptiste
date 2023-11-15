@@ -44,6 +44,9 @@ namespace Sicily.Controleur
 
             return (maListeLiaison);
         }
-
+        public void SupLiaison(Liaison liaison)
+        {
+            SicilyDAO.SupLiaison(liaison);
+        }
     }
 }

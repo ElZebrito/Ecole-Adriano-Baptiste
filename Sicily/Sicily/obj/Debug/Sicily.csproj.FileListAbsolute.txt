@@ -41,3 +41,14 @@ C:\Users\bapti\Source\Repos\papichulo\Sicily\Sicily\obj\Debug\Sicily.csproj.Core
 C:\Users\bapti\Source\Repos\papichulo\Sicily\Sicily\obj\Debug\Sicily.csproj.CopyComplete
 C:\Users\bapti\Source\Repos\papichulo\Sicily\Sicily\obj\Debug\Sicily.exe
 C:\Users\bapti\Source\Repos\papichulo\Sicily\Sicily\obj\Debug\Sicily.pdb
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.csproj.AssemblyReference.cache
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.Form1.resources
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.Properties.Resources.resources
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.csproj.GenerateResource.cache
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.csproj.CoreCompileInputs.cache
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.exe
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.pdb
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\bin\Debug\Sicily.exe.config
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\bin\Debug\Sicily.exe
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\bin\Debug\Sicily.pdb
+C:\Users\Famille\Desktop\Papi\Sicily\Sicily\obj\Debug\Sicily.csproj.CopyComplete

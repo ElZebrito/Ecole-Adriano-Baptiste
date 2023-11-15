@@ -30,6 +30,7 @@ namespace Sicily.DAL
 
         private static MySqlCommand Ocom;
         private static MySqlCommand Ocom2;
+        private static MySqlCommand Ocom3;
 
 
 
@@ -169,13 +170,40 @@ namespace Sicily.DAL
 
             foreach (Liaison liaison in ll)
             {
-                if (liaison.Secteur == s)
+                if (liaison.IdSecteur == s.Id)
                 {
                     ListeLiaisonSecteur.Add(liaison);
                 }
             }
 
             return ListeLiaisonSecteur;
+
+        }
+
+        public static void SupLiaison(Liaison liaison)
+        {
+            try
+            {
+
+                maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
+
+
+                maConnexionSql.openConnection();
+
+
+                Ocom3 = maConnexionSql.reqExec("delete from liaison where id ="+liaison.IdLiaison);
+
+                maConnexionSql.closeConnection();
+
+            }
+
+            catch (Exception emp)
+            {
+
+                throw (emp);
+
+            }
+
 
         }
 
