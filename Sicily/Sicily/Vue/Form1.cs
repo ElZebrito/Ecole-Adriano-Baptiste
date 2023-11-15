@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Sicily.Modele;
 using Sicily.DAL;
+using Sicily.Vue;
 
 namespace Sicily
 {
@@ -107,6 +108,17 @@ namespace Sicily
                 monManager.SupLiaison(liaison);
                 affiche();
             }
+        }
+
+        private void Modifier_Click(object sender, EventArgs e)
+        {
+            Liaison liaison = (Liaison)listBoxliaison.SelectedItem;
+
+            ModifDuree MD = new ModifDuree(liaison);
+
+            MD.ShowDialog();
+
+            affiche();
         }
     }
 }

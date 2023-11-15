@@ -25,7 +25,7 @@ namespace Sicily.Modele
         public int IdSecteur { get => ID_SECTEUR; }
         public int IdPortDepart { get => ID_PORT; }
         public int IdPortArrivee { get => ID_PORT_ARRIVEE; }
-        public string Duree { get => DUREE_LIAISON; }
+        public string Duree { get => DUREE_LIAISON; set => DUREE_LIAISON = value; }
         //public Secteur Secteur { get => secteur; }
 
 
