@@ -51,11 +51,21 @@
             this.groupBoxMAJ.SuspendLayout();
             this.SuspendLayout();
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new System.Drawing.Point(184, 29);
+            label2.Name = "label2";
+            label2.Size = new System.Drawing.Size(94, 13);
+            label2.TabIndex = 16;
+            label2.Text = "Liste des Secteurs";
+            label2.Click += new System.EventHandler(this.label2_Click_1);
+            // 
             // listBoxSecteur
             // 
             this.listBoxSecteur.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.listBoxSecteur.FormattingEnabled = true;
-            this.listBoxSecteur.Location = new System.Drawing.Point(37, 57);
+            this.listBoxSecteur.Location = new System.Drawing.Point(88, 57);
             this.listBoxSecteur.Name = "listBoxSecteur";
             this.listBoxSecteur.Size = new System.Drawing.Size(316, 394);
             this.listBoxSecteur.TabIndex = 0;
@@ -65,7 +75,7 @@
             // 
             this.listBoxliaison.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.listBoxliaison.FormattingEnabled = true;
-            this.listBoxliaison.Location = new System.Drawing.Point(408, 57);
+            this.listBoxliaison.Location = new System.Drawing.Point(465, 57);
             this.listBoxliaison.Name = "listBoxliaison";
             this.listBoxliaison.Size = new System.Drawing.Size(330, 392);
             this.listBoxliaison.TabIndex = 1;
@@ -73,7 +83,7 @@
             // 
             // tbLiaison
             // 
-            this.tbLiaison.Location = new System.Drawing.Point(128, 119);
+            this.tbLiaison.Location = new System.Drawing.Point(155, 64);
             this.tbLiaison.Name = "tbLiaison";
             this.tbLiaison.Size = new System.Drawing.Size(100, 20);
             this.tbLiaison.TabIndex = 2;
@@ -88,24 +98,24 @@
             this.Insertion.Controls.Add(this.label1);
             this.Insertion.Controls.Add(this.button1);
             this.Insertion.Controls.Add(this.tbLiaison);
-            this.Insertion.Location = new System.Drawing.Point(775, 57);
+            this.Insertion.Location = new System.Drawing.Point(905, 115);
             this.Insertion.Name = "Insertion";
-            this.Insertion.Size = new System.Drawing.Size(253, 375);
+            this.Insertion.Size = new System.Drawing.Size(294, 301);
             this.Insertion.TabIndex = 5;
             this.Insertion.TabStop = false;
-            this.Insertion.Text = "Insertion";
+            this.Insertion.Text = "Insertion d\'une nouelle liaison :";
             this.Insertion.Enter += new System.EventHandler(this.Insertion_Enter);
             // 
             // tbDuree
             // 
-            this.tbDuree.Location = new System.Drawing.Point(128, 243);
+            this.tbDuree.Location = new System.Drawing.Point(155, 150);
             this.tbDuree.Name = "tbDuree";
             this.tbDuree.Size = new System.Drawing.Size(100, 20);
             this.tbDuree.TabIndex = 15;
             // 
             // tbArrivee
             // 
-            this.tbArrivee.Location = new System.Drawing.Point(128, 183);
+            this.tbArrivee.Location = new System.Drawing.Point(155, 108);
             this.tbArrivee.Name = "tbArrivee";
             this.tbArrivee.Size = new System.Drawing.Size(100, 20);
             this.tbArrivee.TabIndex = 14;
@@ -113,33 +123,35 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(50, 246);
+            this.label5.Location = new System.Drawing.Point(17, 150);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(36, 13);
+            this.label5.Size = new System.Drawing.Size(100, 13);
             this.label5.TabIndex = 11;
-            this.label5.Text = "Duree";
+            this.label5.Text = "Duree de la liaison :";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(21, 183);
+            this.label4.Location = new System.Drawing.Point(25, 108);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 13);
+            this.label4.Size = new System.Drawing.Size(95, 13);
             this.label4.TabIndex = 10;
-            this.label4.Text = "ID PORT ARRIVEE";
+            this.label4.Text = "Id du port d\'arrivé :";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(36, 119);
+            this.label1.Location = new System.Drawing.Point(37, 66);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 13);
+            this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 7;
-            this.label1.Text = "ID liaison : ";
+            this.label1.Text = "ID de la  liaison : ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(88, 323);
+            this.button1.Location = new System.Drawing.Point(94, 203);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 6;
@@ -151,16 +163,16 @@
             // 
             this.Suppression.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.Suppression.Controls.Add(this.Supprimer);
-            this.Suppression.Location = new System.Drawing.Point(504, 523);
+            this.Suppression.Location = new System.Drawing.Point(517, 496);
             this.Suppression.Name = "Suppression";
-            this.Suppression.Size = new System.Drawing.Size(200, 95);
+            this.Suppression.Size = new System.Drawing.Size(213, 80);
             this.Suppression.TabIndex = 6;
             this.Suppression.TabStop = false;
-            this.Suppression.Text = "Suppression";
+            this.Suppression.Text = "Suppression de la liaison séléctionnée :";
             // 
             // Supprimer
             // 
-            this.Supprimer.Location = new System.Drawing.Point(64, 44);
+            this.Supprimer.Location = new System.Drawing.Point(67, 30);
             this.Supprimer.Name = "Supprimer";
             this.Supprimer.Size = new System.Drawing.Size(75, 23);
             this.Supprimer.TabIndex = 0;
@@ -170,38 +182,29 @@
             // 
             // groupBoxMAJ
             // 
+            this.groupBoxMAJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.groupBoxMAJ.Controls.Add(this.Modifier);
-            this.groupBoxMAJ.Location = new System.Drawing.Point(67, 462);
+            this.groupBoxMAJ.Location = new System.Drawing.Point(109, 496);
             this.groupBoxMAJ.Name = "groupBoxMAJ";
-            this.groupBoxMAJ.Size = new System.Drawing.Size(241, 178);
+            this.groupBoxMAJ.Size = new System.Drawing.Size(265, 83);
             this.groupBoxMAJ.TabIndex = 7;
             this.groupBoxMAJ.TabStop = false;
-            this.groupBoxMAJ.Text = "Mise à jour ";
+            this.groupBoxMAJ.Text = "Modification de la durée de la liasion sélectionnée :";
             // 
             // Modifier
             // 
-            this.Modifier.Location = new System.Drawing.Point(64, 61);
+            this.Modifier.Location = new System.Drawing.Point(94, 30);
             this.Modifier.Name = "Modifier";
-            this.Modifier.Size = new System.Drawing.Size(75, 50);
+            this.Modifier.Size = new System.Drawing.Size(69, 28);
             this.Modifier.TabIndex = 0;
             this.Modifier.Text = "Modifier";
             this.Modifier.UseVisualStyleBackColor = true;
             this.Modifier.Click += new System.EventHandler(this.Modifier_Click);
             // 
-            // label2
-            // 
-            label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(139, 29);
-            label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(94, 13);
-            label2.TabIndex = 16;
-            label2.Text = "Liste des Secteurs";
-            label2.Click += new System.EventHandler(this.label2_Click_1);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(553, 29);
+            this.label3.Location = new System.Drawing.Point(578, 29);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 13);
             this.label3.TabIndex = 17;

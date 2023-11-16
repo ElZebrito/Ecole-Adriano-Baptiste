@@ -64,3 +64,15 @@ C:\Users\gamer\source\repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.c
 C:\Users\gamer\source\repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.csproj.CopyComplete
 C:\Users\gamer\source\repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.exe
 C:\Users\gamer\source\repos\ElZebrito\papichulo\Sicily\Sicily\obj\Debug\Sicily.pdb
+C:\Users\bapti\source\repos\Sicily\Sicily\bin\Debug\Sicily.exe.config
+C:\Users\bapti\source\repos\Sicily\Sicily\bin\Debug\Sicily.exe
+C:\Users\bapti\source\repos\Sicily\Sicily\bin\Debug\Sicily.pdb
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.csproj.AssemblyReference.cache
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.Form1.resources
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.Properties.Resources.resources
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.Vue.ModifDuree.resources
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.csproj.GenerateResource.cache
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.csproj.CoreCompileInputs.cache
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.csproj.CopyComplete
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.exe
+C:\Users\bapti\source\repos\Sicily\Sicily\obj\Debug\Sicily.pdb
