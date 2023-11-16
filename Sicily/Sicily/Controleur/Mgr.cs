@@ -47,6 +47,20 @@ namespace Sicily.Controleur
         public void SupLiaison(Liaison liaison)
         {
             SicilyDAO.SupLiaison(liaison);
+           
+        }
+        public void ModifDurer(Liaison liaison, string Duree)
+        {
+            SicilyDAO.ModifDurer(liaison,Duree);
+
+        }
+
+        public void InsererNouvelleLiaison(int idliaison, int idSecteur, int idPortDepart, int idPortArrivee, string duree)
+        {
+            Liaison nouvelleLiaison = new Liaison(idliaison, idSecteur, idPortDepart, idPortArrivee, TimeSpan.Parse(duree));
+            SicilyDAO.InsertLiaison(nouvelleLiaison);
+            chargementLiaiBD();
+            
         }
     }
 }

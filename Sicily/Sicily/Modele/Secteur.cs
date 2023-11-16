@@ -34,7 +34,7 @@ namespace Sicily.Modele
         // pour afficher la liste par la suite
         public string DescriptionSecteur
         {
-            get => "Id : " + this.ID_SECTEUR + " Libelle :" + this.LIBELLE_SECTEUR ;
+            get => "Id : " + this.ID_SECTEUR + " Libelle : " + this.LIBELLE_SECTEUR ;
         }
         
         

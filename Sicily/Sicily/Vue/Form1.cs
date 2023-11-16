@@ -31,14 +31,20 @@ namespace Sicily
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            listBoxliaison.Visible = false;
-            textBox1.Visible = true;
+            listBoxliaison.Visible = true;
+            tbLiaison.Visible = true;
 
             lSec = monManager.chargementSicBD();
             lLiai = monManager.chargementLiaiBD();
             listBoxSecteur.ClearSelected();
 
             affiche();
+        }
+        public void RefreshForm()
+        {
+            listBoxliaison.DataSource = null;
+            listBoxliaison.DataSource = ListeLiaisonParSecteur;
+            listBoxliaison.DisplayMember = "DescriptionLIAISON";
         }
         public void affiche()
 
@@ -102,23 +108,57 @@ namespace Sicily
         private void Supprimer_Click(object sender, EventArgs e)
         {
             Liaison liaison = listBoxliaison.SelectedItem as Liaison;
+
             if (liaison != null)
             {
-                lLiai.Remove(liaison);
                 monManager.SupLiaison(liaison);
+                lLiai = monManager.chargementLiaiBD();
+                Secteur secteur = listBoxSecteur.SelectedItem as Secteur;
+                ListeLiaisonParSecteur = SicilyDAO.TrouverLiaison(secteur, lLiai);
                 affiche();
             }
+
         }
 
         private void Modifier_Click(object sender, EventArgs e)
         {
             Liaison liaison = (Liaison)listBoxliaison.SelectedItem;
 
-            ModifDuree MD = new ModifDuree(liaison);
-
+            ModifDuree MD = new ModifDuree(liaison,monManager);
+            MD.Owner = this;
             MD.ShowDialog();
 
             affiche();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int p = ((Secteur)listBoxSecteur.SelectedItem).Id;
+            {
+                int idLiaison = Convert.ToInt32(tbLiaison.Text);
+                int idSecteur = ((Secteur)listBoxSecteur.SelectedItem).Id;
+                int idPortDepart = Convert.ToInt32(p);
+                int idPortArrivee = Convert.ToInt32(tbArrivee.Text);
+                string duree = tbDuree.Text;
+
+                monManager.InsererNouvelleLiaison(idLiaison, idSecteur, idPortDepart, idPortArrivee, duree);
+            }
+            affiche();
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

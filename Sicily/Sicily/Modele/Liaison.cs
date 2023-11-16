@@ -57,7 +57,7 @@ namespace Sicily.Modele
         // pour afficher la liste par la suite
         public string DescriptionLIAISON
         {
-            get => "IdL : " + this.ID_LIAISON + " IdS :" + this.ID_SECTEUR + " IdPortDepart :" + this.ID_PORT + " IdPortArrivee :" + this.ID_PORT_ARRIVEE + " Duree :" + this.DUREE_LIAISON;
+            get => "IdL : " + this.ID_LIAISON + " IdS : " + this.ID_SECTEUR + " IdPortDepart : " + this.ID_PORT + " IdPortArrivee : " + this.ID_PORT_ARRIVEE + " Duree : " + this.DUREE_LIAISON;
         }
 
     }

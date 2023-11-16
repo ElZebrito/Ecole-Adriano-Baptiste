@@ -184,27 +184,70 @@ namespace Sicily.DAL
         {
             try
             {
-
                 maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
-
-
                 maConnexionSql.openConnection();
 
+                // Supprimer d'abord les entrées liées dans traversee
+                string deleteTraverseeQuery = "DELETE FROM traversee WHERE ID_LIAISON = " + liaison.IdLiaison;
+                MySqlCommand deleteTraverseeCommand = maConnexionSql.reqExec(deleteTraverseeQuery);
+                deleteTraverseeCommand.ExecuteNonQuery();
 
-                Ocom3 = maConnexionSql.reqExec("delete from liaison where id ="+liaison.IdLiaison);
+                // Ensuite, supprimer la liaison dans la table principale
+                string deleteLiaisonQuery = "DELETE FROM liaison WHERE ID_LIAISON = " + liaison.IdLiaison;
+                MySqlCommand deleteLiaisonCommand = maConnexionSql.reqExec(deleteLiaisonQuery);
+                deleteLiaisonCommand.ExecuteNonQuery();
 
                 maConnexionSql.closeConnection();
-
             }
-
             catch (Exception emp)
             {
-
                 throw (emp);
-
             }
+        }
 
 
+        public static void ModifDurer(Liaison liaison, string Duree_LIAISON)
+        {
+            try
+            {
+                maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
+                maConnexionSql.openConnection();
+
+                string query = $"UPDATE liaison SET DUREE_LIAISON = '{Duree_LIAISON}' WHERE ID_LIAISON = {liaison.IdLiaison}";
+
+                Console.WriteLine("Query: " + query); // Ajoutez cette ligne pour afficher la requête SQL
+
+                Ocom = maConnexionSql.reqExec(query);
+                Ocom.ExecuteNonQuery();
+
+                maConnexionSql.closeConnection();
+            }
+            catch (Exception emp)
+            {
+                throw emp;
+            }
+        }
+
+
+        public static void InsertLiaison(Liaison liaison)
+        {
+            try
+            {
+                maConnexionSql = ConnexionSql.getInstance(provider, dataBase, uid, mdp);
+                maConnexionSql.openConnection();
+
+                string query = "INSERT INTO liaison (ID_LIAISON, ID_SECTEUR, ID_PORT, ID_PORT_ARRIVEE, DUREE_LIAISON) " +
+                               $"VALUES ({liaison.IdLiaison}, {liaison.IdSecteur}, {liaison.IdPortDepart}, {liaison.IdPortArrivee}, '{liaison.Duree}')";
+
+                Ocom = maConnexionSql.reqExec(query);
+                Ocom.ExecuteNonQuery();
+
+                maConnexionSql.closeConnection();
+            }
+            catch (Exception emp)
+            {
+                throw emp;
+            }
         }
 
     }
@@ -213,6 +256,3 @@ namespace Sicily.DAL
 
 
 }
-
-
-// peut etre faire fonction find liason par secteur
