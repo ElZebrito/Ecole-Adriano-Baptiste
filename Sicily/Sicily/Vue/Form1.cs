@@ -44,30 +44,47 @@ namespace Sicily
         {
             listBoxliaison.DataSource = null;
             listBoxliaison.DataSource = ListeLiaisonParSecteur;
-            listBoxliaison.DisplayMember = "DescriptionLIAISON";
+            listBoxliaison.DisplayMember = "DescriptionLiaison";
         }
         public void affiche()
 
         {
 
 
+            /*  try
+              {
+
+
+
+                  listBoxSecteur.DataSource = lSec;
+                  listBoxSecteur.DisplayMember = "DescriptionSecteur";
+                  listBoxliaison.DataSource = ListeLiaisonParSecteur;
+                  listBoxliaison.DisplayMember = "DescriptionLiaison";
+
+
+              }
+
+
+              catch (Exception ex)
+              {
+
+                  MessageBox.Show(ex.Message);
+              }*/
             try
             {
-
-
-                
                 listBoxSecteur.DataSource = lSec;
                 listBoxSecteur.DisplayMember = "DescriptionSecteur";
-                listBoxliaison.DataSource = ListeLiaisonParSecteur;
+
+                // Mettre à jour ListeLiaisonParSecteur en fonction de la sélection actuelle
+                Secteur secteur = listBoxSecteur.SelectedItem as Secteur;
+                ListeLiaisonParSecteur = SicilyDAO.TrouverLiaison(secteur, lLiai);
+
+                listBoxliaison.DataSource = null;  // Supprimer la source de données existante
+                listBoxliaison.DataSource = ListeLiaisonParSecteur;  // Assigner la nouvelle liste
                 listBoxliaison.DisplayMember = "DescriptionLiaison";
-               
-
             }
-
-
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message);
             }
 
@@ -115,7 +132,7 @@ namespace Sicily
                 lLiai = monManager.chargementLiaiBD();
                 Secteur secteur = listBoxSecteur.SelectedItem as Secteur;
                 ListeLiaisonParSecteur = SicilyDAO.TrouverLiaison(secteur, lLiai);
-                affiche();
+                RefreshForm();
             }
 
         }
@@ -134,7 +151,7 @@ namespace Sicily
         private void button1_Click(object sender, EventArgs e)
         {
             int p = ((Secteur)listBoxSecteur.SelectedItem).Id;
-            {
+            
                 int idLiaison = Convert.ToInt32(tbLiaison.Text);
                 int idSecteur = ((Secteur)listBoxSecteur.SelectedItem).Id;
                 int idPortDepart = Convert.ToInt32(p);
@@ -142,8 +159,20 @@ namespace Sicily
                 string duree = tbDuree.Text;
 
                 monManager.InsererNouvelleLiaison(idLiaison, idSecteur, idPortDepart, idPortArrivee, duree);
-            }
-            affiche();
+
+            lLiai = monManager.chargementLiaiBD();
+            Secteur secteur = listBoxSecteur.SelectedItem as Secteur;
+            ListeLiaisonParSecteur = SicilyDAO.TrouverLiaison(secteur, lLiai);
+
+            // Rafraîchir la listBoxliaison avec la nouvelle liste
+            RefreshForm();
+
+
+            tbArrivee.Clear();
+            tbLiaison.Clear();
+            tbDuree.Clear();
+         
+
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

@@ -59,8 +59,8 @@ namespace Sicily.Controleur
         {
             Liaison nouvelleLiaison = new Liaison(idliaison, idSecteur, idPortDepart, idPortArrivee, TimeSpan.Parse(duree));
             SicilyDAO.InsertLiaison(nouvelleLiaison);
-            chargementLiaiBD();
-            
+           
+           
         }
     }
 }
