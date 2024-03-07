@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Mar 06, 2024 at 08:58 PM
+-- Generation Time: Mar 07, 2024 at 04:13 PM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `sicilylines`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `equipements`
+--
+
+CREATE TABLE `equipements` (
+  `id` bigint UNSIGNED NOT NULL,
+  `LIBELLEEQUIPEMENT` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `equipements`
+--
+
+INSERT INTO `equipements` (`id`, `LIBELLEEQUIPEMENT`) VALUES
+(1, 'Rempart clash of clan'),
+(2, 'golem d\'elexir'),
+(3, 'Tortank level 80');
 
 -- --------------------------------------------------------
 
@@ -49,15 +69,38 @@ CREATE TABLE `ferries` (
   `LONGUEUR` int NOT NULL,
   `LARGEUR` int NOT NULL,
   `VITESSE` int NOT NULL,
-  `PHOTO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL
+  `PHOTO` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `ferries`
 --
 
-INSERT INTO `ferries` (`id`, `NOM`, `LONGUEUR`, `LARGEUR`, `VITESSE`, `PHOTO`) VALUES
-(2, 'Platone', 25, 7, 16, '');
+INSERT INTO `ferries` (`id`, `NOM`, `LONGUEUR`, `LARGEUR`, `VITESSE`, `PHOTO`, `created_at`, `updated_at`) VALUES
+(1, 'popaul', 30, 10, 25, 'ferry.jpg', NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `ferry_equipement`
+--
+
+CREATE TABLE `ferry_equipement` (
+  `id` bigint UNSIGNED NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL,
+  `ferry_id` bigint UNSIGNED NOT NULL,
+  `equipement_id` bigint UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `ferry_equipement`
+--
+
+INSERT INTO `ferry_equipement` (`id`, `created_at`, `updated_at`, `ferry_id`, `equipement_id`) VALUES
+(1, NULL, NULL, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -80,7 +123,9 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (2, '2014_10_12_100000_create_password_reset_tokens_table', 1),
 (3, '2019_08_19_000000_create_failed_jobs_table', 1),
 (4, '2019_12_14_000001_create_personal_access_tokens_table', 1),
-(5, '2024_03_06_140751_create_ferries_table', 2);
+(5, '2024_03_06_140751_create_ferries_table', 1),
+(6, '2024_03_07_092532_create_equipements_table', 1),
+(7, '2024_03_07_093908_create_ferry_equipement_table', 1);
 
 -- --------------------------------------------------------
 
@@ -135,11 +180,17 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `name`, `email`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'baptiste', 'jpdu75015@gmail.com', NULL, '$2y$12$jKSi4GcAGGgT6Knt4E.X1.A59TcWhxFDdXkxusgufNP2eO7H6HeLa', NULL, '2024-03-06 13:25:43', '2024-03-06 13:25:43');
+(1, 'baba', 'jpdu75015@gmail.com', NULL, '$2y$12$BSoEwXRTzLRy5vVyXcc25en1Uwhr4uXe1vIsMu73sbQ9Rq4uCX5SG', NULL, '2024-03-07 09:46:37', '2024-03-07 09:46:37');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `equipements`
+--
+ALTER TABLE `equipements`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `failed_jobs`
@@ -153,6 +204,14 @@ ALTER TABLE `failed_jobs`
 --
 ALTER TABLE `ferries`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `ferry_equipement`
+--
+ALTER TABLE `ferry_equipement`
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `ferry_equipement_ferry_id_foreign` (`ferry_id`),
+  ADD KEY `ferry_equipement_equipement_id_foreign` (`equipement_id`);
 
 --
 -- Indexes for table `migrations`
@@ -186,6 +245,12 @@ ALTER TABLE `users`
 --
 
 --
+-- AUTO_INCREMENT for table `equipements`
+--
+ALTER TABLE `equipements`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `failed_jobs`
 --
 ALTER TABLE `failed_jobs`
@@ -195,13 +260,19 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `ferries`
 --
 ALTER TABLE `ferries`
-  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `ferry_equipement`
+--
+ALTER TABLE `ferry_equipement`
+  MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `personal_access_tokens`
@@ -214,6 +285,17 @@ ALTER TABLE `personal_access_tokens`
 --
 ALTER TABLE `users`
   MODIFY `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `ferry_equipement`
+--
+ALTER TABLE `ferry_equipement`
+  ADD CONSTRAINT `ferry_equipement_equipement_id_foreign` FOREIGN KEY (`equipement_id`) REFERENCES `equipements` (`id`) ON DELETE CASCADE,
+  ADD CONSTRAINT `ferry_equipement_ferry_id_foreign` FOREIGN KEY (`ferry_id`) REFERENCES `ferries` (`id`) ON DELETE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
